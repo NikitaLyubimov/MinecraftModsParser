@@ -1,6 +1,6 @@
 import MySQLdb
 
-db
+db = object()
 
 def connect_to_database(password):
     global db
@@ -10,10 +10,10 @@ def connect_to_database(password):
                     passwd=password,
                     db="parser")
     
-cursor = db.cursor()
+
 
 def insert_post(content_arr):
-    global cursor
+    cursor = db.cursor()
 
     cursor.execute(f"INSERT INTO minecraft_modes(title, description, link) VALUES({content_arr[0]}, {content_arr[1]}, {content_arr[2]})")
 
