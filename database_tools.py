@@ -1,9 +1,15 @@
 import MySQLdb
 
-db = MySQLdb.connect(host="127.0.0.1",
+db
+
+def connect_to_database(password):
+    global db
+
+    db = MySQLdb.connect(host="127.0.0.1",
                     user="root",
-                    passwd="gachimuchicriticale99099",
+                    passwd=password,
                     db="parser")
+    
 cursor = db.cursor()
 
 def insert_post(content_arr):
